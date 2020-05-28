@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.editnote.EditNote">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/title_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="20dp"
+        android:paddingStart="10dp"
+        android:hint="@string/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:fontFamily="@font/comic"
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_below="@+id/title_edit"
+        android:autofillHints="Insert Note"
+        android:background="@drawable/edittext_bg"
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLength="256"
+        android:hint="@string/max"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_edit"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_btn"
+        android:fontFamily="@font/ver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/save"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/tv_priority"
+        android:text="@string/priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/ver"
+        android:layout_below="@+id/editText"
+
+        />
+
+    <RadioGroup
+        android:layout_below="@+id/tv_priority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/priority_high"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="@string/high"
+            android:fontFamily="@font/ver"
+            android:onClick="onRadioButtonClicked" />
+
+        <RadioButton
+            android:id="@+id/priority_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/medium"
+            android:textAlignment="center"
+            android:fontFamily="@font/ver"
+            android:onClick="onRadioButtonClicked" />
+
+        <RadioButton
+            android:id="@+id/priority_low"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/low"
+            android:textAlignment="center"
+            android:fontFamily="@font/ver"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked" />
+
+    </RadioGroup>
+
+</RelativeLayout>
